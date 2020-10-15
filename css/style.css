@@ -1,0 +1,155 @@
+body{
+    background: #4183d9;
+}
+
+header{
+    position: relative;
+    padding: 10px 20px;
+    background-color: #0D0D0D;
+    color: #666DF2;
+    font-family: sans-serif;
+}
+
+header img {
+    position: relative;
+    width: 100%;
+}
+
+.logo-cabecalho{
+    position: relative;
+    width: 50px;
+}
+
+header h2{
+    position: absolute;
+    top: 30px;
+    left: 90px;
+    font-size: 20px;
+}
+
+.btn-search{
+    position: absolute;
+    right: 0;
+    top: 25px;
+    margin-right: 100px;
+}
+
+.btn-search:hover{
+    box-shadow: 0px 0px 15px 0px #6F4BF2;
+    transition: 0.4s;
+}
+
+header input{
+    padding-top: 8px;
+    border: 3px solid #666DF2;
+    border-radius: 9px 0px 0px 9px;
+    width: 300px;
+}
+
+@media screen and (max-width: 600px) {
+    header input{
+        padding-top: 8px;
+        border: 3px solid #666DF2;
+        border-radius: 9px 0px 0px 9px;
+        width: 100%;
+    }
+  }
+
+header button{
+    background: url("../src/lupa_pb.png") ;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 50%;
+    position: absolute;
+    cursor: pointer;
+    top: 0px;
+    height: 30px;
+    width: 32px;
+    border: 3px solid #666DF2;
+    background-color: #666DF2;
+    border-radius: 0px 9px 9px 0px;
+}
+
+header button:hover{
+    background: url("../src/lupa.png");
+    background-color: #6F4BF2;
+    background-position: center;
+    background-repeat: no-repeat;
+    border: 3px solid #6F4BF2;
+    background-size: 50%;
+    transition: 0.4s;
+}
+
+/* CARD */
+
+* {
+    box-sizing: border-box;
+  }
+
+.row {
+    margin: 20px 30px;
+}
+
+.container-card{
+    display: inline-block;
+    width: 20%;
+    margin: 0 -1.7px;
+    padding: 0 10px;
+    vertical-align: top;
+}
+
+.card{
+    padding: 16px;
+    margin: 10px 0px;
+    text-align: center;
+    background-color: #0D0D0D;
+    color: white;
+    font-family: sans-serif;
+    border-radius: 25px;
+    box-shadow: 0px 0px 15px 0px #0d0d0d;
+}
+
+.card:hover{
+    cursor: pointer;
+    box-shadow: 0px 0px 20px 5px #0d0d0d;
+}
+
+.card img{
+    width: 80px;
+}
+
+.card:hover img{
+    width: 100px;
+}
+
+@media screen and (max-width: 600px) {
+    .container-card{
+        display: block;
+        width: 100%;
+        margin-bottom: 20px;
+    }
+  }
+
+/* FIM CARD */
+
+.containerCarregamento{
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+
+#carregamento{
+    width: 30px;
+    height: 30px;
+    border: 5px solid #b6aeff;
+    border-top-color: #6a12a5;
+    border-radius: 50%;
+    animation: rotacao 1s infinite;
+    margin-bottom: 50px;
+}
+
+@keyframes rotacao{
+    to{
+        transform: rotate(1turn);
+    }
+}
