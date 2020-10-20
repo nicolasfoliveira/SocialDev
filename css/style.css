@@ -1,12 +1,12 @@
 body{
-    background: #4183d9;
+    background: #666DF2;
 }
 
 header{
     position: relative;
     padding: 10px 20px;
     background-color: #0D0D0D;
-    color: #666DF2;
+    color: #6F4BF2;
     font-family: sans-serif;
 }
 
@@ -153,3 +153,75 @@ header button:hover{
         transform: rotate(1turn);
     }
 }
+
+/*############### Card do perfil de usuario ####################*/
+
+.containerUser{
+    width: 80%;
+    background-color: #0D0D0D;
+    border-radius: 25px;
+    box-shadow: 0px 0px 15px 0px #0d0d0d;
+    color: white;
+    font-family: sans-serif;
+    padding: 16px;
+    text-align: center;
+    margin: 50px auto;
+}
+
+.containerUser .cardUser{
+    display: flex;
+    font-family: sans-serif;
+}
+
+.containerUser .cardUser .UserAvatar{
+    width: 30%;
+    text-align: center;
+}
+
+.containerUser .cardUser .UserAvatar img{
+    width: 100%;
+    border-radius: 15%;
+    padding:30px
+}
+
+.containerUser .cardUser .UserDados{
+    width: 70%;
+    margin: auto 5px;
+}
+
+.containerUser .cardUser .UserDados p{
+    padding: 8px;
+    text-align: left;
+    color: #dbdbdb;
+}
+
+.containerUser .cardUser .UserDados .UserName{
+    font-size: 28px;
+    color: #6F4BF2;
+    font-weight: bold;
+}
+
+.containerUser .cardUser .UserDados .UserCompany{
+    font-weight: bold;
+    color: white;
+}
+
+.containerUser .cardUser .UserDados img{
+    margin-right: 7px;
+    width: 20px;
+    top: 3px;
+    position: relative;
+}
+
+@media screen and (max-width: 600px) {
+    .containerUser{
+        display: block;
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    .containerUser .cardUser{
+        display: block;
+    }
+}
+
+/*############### FIM do Card de perfil do usuario ####################*/

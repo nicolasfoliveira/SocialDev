@@ -8,23 +8,24 @@
         <link rel="stylesheet" href="css/reset.css">
         <link rel="stylesheet" href="css/style.css">
 
-        <script src="main.js"></script>    
+        <script src="js/main.js"></script>  
 
     </head> 
     <body>
         <header>
             <div class="logo-cabecalho">
-                <img src="src/logo.png" alt="Logo do Social Dev">
+                <a href="index.html"><img src="src/logo.png" alt="Logo do Social Dev">
             </div>
-            <h2>Social Dev</h2>
+            <h2>Social Dev</h2></a>
             <div class="btn-search">
-                <input type="text" placeholder="Pesquisar...">
+                <input id="filtroSearch" type="text" name="filtro" placeholder="Pesquisar...">
                 <button type="submit"><i class="fa fa-search"></i></button>
             </div>
         </header>
-        <div class="row" id="script-card"></div> 
+        <div class="row" id="script-card"></div><br>
         <div id="loading" class="containerCarregamento">
             <div id="carregamento"></div>
         </div>
     </body>
+    <script src="js/filtro.js"></script> 
 </html>
