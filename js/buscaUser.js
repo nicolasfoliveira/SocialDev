@@ -2,7 +2,7 @@ var url = window.location.search;
 var parametro = url.split("=")[1];
 
 chamaUser = () => {
-    return fetch('https://api.github.com/users/'+parametro+'?access_token=f6ec563a2da30a5bd7dc191aa79e578a290a08ef').then( resposta => {
+    return fetch('https://api.github.com/users/'+parametro+'?access_token=3129ef14bcdc25cece63804c473e989c0bfd8069').then( resposta => {
         return resposta.json();
     })
     .then (json => {

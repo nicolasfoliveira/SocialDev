@@ -4,18 +4,17 @@ var ccLoading = 0;
 
 
 chamaDados = () => {
-    return fetch('https://api.github.com/search/users?q=location:piracicaba&per_page=100&access_token=f6ec563a2da30a5bd7dc191aa79e578a290a08ef').then( resposta => {
+    return fetch('https://api.github.com/search/users?q=location:piracicaba&per_page=100&access_token=3129ef14bcdc25cece63804c473e989c0bfd8069').then( resposta => {
         return resposta.json();
     })
     .then (json => {
         return json;
     });
-    
 };
 
 buscaDados = (user) => {
 
-    return fetch('https://api.github.com/users/'+user+'?access_token=f6ec563a2da30a5bd7dc191aa79e578a290a08ef').then( resposta => {
+    return fetch('https://api.github.com/users/'+user+'?access_token=3129ef14bcdc25cece63804c473e989c0bfd8069').then( resposta => {
         return resposta.json();
     })
     .then (json => {
@@ -25,13 +24,13 @@ buscaDados = (user) => {
 
 function addDados() {
     lista.then(exibe=>{
-
+        ccLoading = 0;
         for(indice=cc;indice<=tam;indice++){
-
+                
             buscaDados(exibe.items[indice].login).then(total=>{
 
                 var selecionaCard = document.querySelector("#script-card")
-
+            
                 card = document.createElement('span');
                 var conteudoTipo;
                 const conteudo_html = `
@@ -69,16 +68,22 @@ function addDados() {
 
 window.onload = function(){
     lista = chamaDados();
-    addDados()
+    addDados();
 }
 
+
 window.addEventListener('scroll', function(){
-    if(((window.innerHeight+window.scrollY+0.8) >= document.documentElement.scrollHeight) && tam<=100){
+    var filtroSearch = document.querySelector("#filtroSearch");
+    console.log(ccLoading)
+    if(((window.innerHeight+window.scrollY+0.8) >= document.documentElement.scrollHeight) && tam<=100 && filtroSearch.value == ""){
         addDados()
     }
-    if(tam>100 && ccLoading==0){    
-        var loading = document.getElementById('carregamento');
-        loading.parentNode.removeChild(loading);
+    if(tam>100 && ccLoading==0){
+        var selectCarregamento = document.querySelector(".carregamentoId")
+        selectCarregamento.setAttribute('id', 'zero')
         ccLoading = 1;
+    }
+    if(filtroSearch.value != "" && ((window.innerHeight+window.scrollY+0.8) >= document.documentElement.scrollHeight) && tam<=100){
+        addFiltro();
     }
 })
