@@ -2,7 +2,7 @@ var url = window.location.search;
 var parametro = url.split("=")[1];
 
 chamaUser = () => {
-    return fetch('https://api.github.com/users/'+parametro+'?access_token=3129ef14bcdc25cece63804c473e989c0bfd8069').then( resposta => {
+    return fetch('https://api.github.com/users/'+parametro+'?access_token=febb8fe31223bc8117df8b61f9b012c6c6000e8f').then( resposta => {
         return resposta.json();
     })
     .then (json => {
@@ -11,12 +11,11 @@ chamaUser = () => {
     
 };
 
-
-function addUser() {
+addUser = () => {
     lista.then(exibe=>{
 
         card = document.createElement('span');
-        var maisHTML;
+    
         const conteudo_html = `
         <div class="containerUser">
             <div class="cardUser">
@@ -24,25 +23,43 @@ function addUser() {
                     <img src="${exibe.avatar_url}" alt="Foto do ${exibe.avatar_url}">
                 </div>
                 <div class="UserDados">
-                    <p class="UserName">${exibe.name}</p>
-                    <p>${exibe.bio}</p>
-                    <p class="UserCompany">${exibe.company}</p>
-                    <p><img src="src/like.png">
-                    ${exibe.location}</p>
-                    <p><img src="src/like.png">
-                    ${exibe.email}</p>
-                    <p><img src="src/like.png">
+                    <p class="UserName">${exibe.name}</p>`
+                    if(exibe.bio != null){
+                        conteudoBio = `<p>${exibe.bio}</p>`
+                    }else{
+                        conteudoBio = ""
+                    }
+                    if(exibe.company != null){
+                        conteudoCompany = `<p class="UserCompany">${exibe.company}</p>`
+                    }else{
+                        conteudoCompany = ""
+                    }
+                    if(exibe.location != null){
+                        conteudoLocation = `<p><img src="src/location.png">${exibe.location}</p>`
+                    }else{
+                        conteudoLocation = ""
+                    }
+                    if(exibe.email != null){
+                        conteudoEmail = `<p><img src="src/email.png">${exibe.email}</p>`
+                    }else{
+                        conteudoEmail = ""
+                    }
+                    conteudoGeral = `
+                    <p><img src="src/seguidores.png">
                     ${exibe.followers} seguidores
-                    <img src="src/repositorio.png" >
+                    <img src="src/github.png">
                     ${exibe.public_repos} repos</p>
                 </div>
             </div>
         </div>`;
         
-        card.innerHTML = conteudo_html;  
+        card.innerHTML = conteudo_html+conteudoBio+conteudoCompany+conteudoLocation+conteudoEmail+conteudoGeral;
         document.getElementById('scriptUser').appendChild(card)
+
+        selectCarregamento = document.querySelector(".carregamentoId")
+        selectCarregamento.setAttribute('id', 'zero')
     });
 }
 
-var lista = chamaUser();
+lista = chamaUser();
 addUser();

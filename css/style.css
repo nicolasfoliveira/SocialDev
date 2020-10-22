@@ -1,3 +1,4 @@
+/*############### index.html ###################*/
 body{
     background: #666DF2;
 }
@@ -6,7 +7,6 @@ header{
     position: relative;
     padding: 10px 20px;
     background-color: #0D0D0D;
-    color: #6F4BF2;
     font-family: sans-serif;
 }
 
@@ -15,7 +15,7 @@ header img {
     width: 100%;
 }
 
-.logo-cabecalho{
+header .logo-cabecalho{
     position: relative;
     width: 50px;
 }
@@ -25,6 +25,7 @@ header h2{
     top: 30px;
     left: 90px;
     font-size: 20px;
+    color: #8261f7;
 }
 
 .btn-search{
@@ -79,8 +80,9 @@ header button:hover{
     background-size: 50%;
     transition: 0.4s;
 }
+/*###################################### FIM index.html ##########################*/
 
-/* CARD */
+/*################### CARD index.html filtro ###################*/
 
 * {
     box-sizing: border-box;
@@ -90,7 +92,7 @@ header button:hover{
     margin: 20px 30px;
 }
 
-.container-card{
+.row .container-card{
     display: inline-block;
     width: 20%;
     margin: 0 -1.7px;
@@ -98,47 +100,59 @@ header button:hover{
     vertical-align: top;
 }
 
-.card{
+.row .container-card .card h3{
+    margin: 10px auto;
+}
+
+.row .container-card .card{
     padding: 16px;
     margin: 10px 0px;
     text-align: center;
     background-color: #0D0D0D;
-    color: white;
+    color: #dbdbdb;
     font-family: sans-serif;
     border-radius: 25px;
     box-shadow: 0px 0px 15px 0px #0d0d0d;
 }
 
-.card:hover{
+.row .container-card .card:hover{
     cursor: pointer;
     box-shadow: 0px 0px 20px 5px #0d0d0d;
 }
 
-.card img{
+.row .container-card .card img{
     width: 80px;
 }
 
-.card:hover img{
+.row .container-card .card:hover .avatar{
     width: 100px;
 }
 
+.row .container-card .card p img{
+    margin-right: 7px;
+    margin-left: 5px;
+    width: 20px;
+    top: 3px;
+    position: relative;
+}
+
 @media screen and (max-width: 600px) {
-    .container-card{
+    .row .container-card{
         display: block;
         width: 100%;
         margin-bottom: 20px;
     }
   }
+/*###################### FIM CARD index.html ##################### */
 
-/* FIM CARD */
-
+/* ############## animação carregamento ####################*/
 .containerCarregamento{
     align-items: center;
     justify-content: center;
     display: flex;
 }
 
-#carregamento{
+.containerCarregamento #carregamento{
     width: 30px;
     height: 30px;
     border: 5px solid #b6aeff;
@@ -153,10 +167,11 @@ header button:hover{
         transform: rotate(1turn);
     }
 }
+/*############# FIM animação carregamento ####################*/
 
 /*############### Card do perfil de usuario ####################*/
 
-.containerUser{
+.row .containerUser{
     width: 80%;
     background-color: #0D0D0D;
     border-radius: 25px;
@@ -168,58 +183,59 @@ header button:hover{
     margin: 50px auto;
 }
 
-.containerUser .cardUser{
+.row .containerUser .cardUser{
     display: flex;
     font-family: sans-serif;
 }
 
-.containerUser .cardUser .UserAvatar{
+.row .containerUser .cardUser .UserAvatar{
     width: 30%;
     text-align: center;
 }
 
-.containerUser .cardUser .UserAvatar img{
+.row .containerUser .cardUser .UserAvatar img{
     width: 100%;
     border-radius: 15%;
     padding:30px
 }
 
-.containerUser .cardUser .UserDados{
+.row .containerUser .cardUser .UserDados{
     width: 70%;
     margin: auto 5px;
 }
 
-.containerUser .cardUser .UserDados p{
+.row .containerUser .cardUser .UserDados p{
     padding: 8px;
     text-align: left;
     color: #dbdbdb;
 }
 
-.containerUser .cardUser .UserDados .UserName{
+.row .containerUser .cardUser .UserDados .UserName{
     font-size: 28px;
     color: #6F4BF2;
     font-weight: bold;
 }
 
-.containerUser .cardUser .UserDados .UserCompany{
+.row .containerUser .cardUser .UserDados .UserCompany{
     font-weight: bold;
     color: white;
 }
 
-.containerUser .cardUser .UserDados img{
+.row .containerUser .cardUser .UserDados img{
     margin-right: 7px;
+    margin-left: 7px;
     width: 20px;
     top: 3px;
     position: relative;
 }
 
 @media screen and (max-width: 600px) {
-    .containerUser{
+    .row .containerUser{
         display: block;
         width: 100%;
         margin-bottom: 20px;
     }
-    .containerUser .cardUser{
+    .row .containerUser .cardUser{
         display: block;
     }
 }
