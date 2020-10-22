@@ -1,4 +1,4 @@
-/*############### index.html ###################*/
+/*############### header ###################*/
 body{
     background: #666DF2;
 }
@@ -80,7 +80,32 @@ header button:hover{
     background-size: 50%;
     transition: 0.4s;
 }
-/*###################################### FIM index.html ##########################*/
+/*###################################### FIM hearder ##########################*/
+
+/*################################## select index #############################*/
+.select{
+    color: black;
+    font-size: 16px;
+    font-weight: bold;
+    font-family: sans-serif;
+    margin: 10px 150px;
+    text-align: right;
+}
+
+.select #selectTipo{
+    width: 120px;
+    height: 25px;
+    font-size: 16px;
+    background-color: #dbdbdb;
+}
+
+.select #selectOrdem{
+    width: 150px;
+    height: 25px;
+    font-size: 16px;
+    background-color: #dbdbdb;
+}
+/*################################## FIM select index ###########################*/
 
 /*################### CARD index.html filtro ###################*/
 

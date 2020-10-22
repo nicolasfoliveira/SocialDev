@@ -1,7 +1,7 @@
 var scriptCard = document.getElementById('script-card');
 
 dadosFiltro = (parametro) => {
-    return fetch('https://api.github.com/search/users?q='+parametro+'&per_page=100&access_token=febb8fe31223bc8117df8b61f9b012c6c6000e8f').then( resposta => {
+    return fetch('https://api.github.com/search/users?q='+parametro+'&per_page=100&access_token=c1de38369453883da10a42053cdba48e20fdc511').then( resposta => {
         return resposta.json();
     })
     .then (json => {
@@ -16,7 +16,8 @@ addFiltro = () =>{
             tam = exibe.items.length - 1;
         }
 
-        tamanhoDados2 = exibe.items.length;
+        tamanhoDados = exibe.items.length;
+        tamanhoDadosmenos = exibe.items.length - 1;
  
         for(indice=cc;indice<=tam;indice++){
      
@@ -47,10 +48,16 @@ addFiltro = () =>{
             });
         }
 
-        cc = tam + 1;
-        tam = tam + 20;
-
-        if(tam>tamanhoDados2 && ccLoading==0){
+        subtracao = tamanhoDadosmenos - tam;
+        if(subtracao<20 && subtracao>0){
+            cc = tam + 1;
+            tam = subtracao + tam
+        }else{
+            cc = tam + 1;
+            tam = tam + 20;
+        }
+        console.log(tamanhoDados)
+        if(tam>tamanhoDados && ccLoading==0){
             var selectCarregamento = document.querySelector(".carregamentoId")
             selectCarregamento.setAttribute('id', 'zero')
             ccLoading = 1;

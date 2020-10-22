@@ -17,9 +17,24 @@
             <h2>Social Dev</h2></a>
             <div class="btn-search">
                 <input id="filtroSearch" type="text" name="filtro" placeholder="Pesquisar...">
-                <button type="submit" onclick="filtro(filtroSearch.value);"><i class="fa fa-search"></i></button>
+                <button type="submit" onclick="redirectIndex();"><i class="fa fa-search"></i></button>
             </div>
         </header>
+        <div class="select">
+            Filtrar
+            <select name="tipo" id="selectTipo" onchange="objetoSelect()">
+                <option value="vazio"></option>
+                <option value="user">Usuário</option>
+                <option value="org">Organização</option>
+            </select>
+            Ordenar
+            <select name="ordem" id="selectOrdem" onchange="objetoSelect()">
+                <option value="vazio"></option>
+                <option value="data">Data de cadastro</option>
+                <option value="seguidores">Seguidores</option>
+                <option value="repos">Repositório</option>
+            </select>
+        </div>
         <div class="row" id="script-card"></div><br>
         <div id="loading" class="containerCarregamento">
             <div class="carregamentoId" id="carregamento"></div>
