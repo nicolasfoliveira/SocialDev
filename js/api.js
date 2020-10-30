@@ -1,6 +1,5 @@
-var config = require('./config.json');
-var accessToken = config.token;
-
+const tokenJson = {token:"5c0921e15488bbb86bed2ccedf4b45b4684bc502"}
+var accessToken = tokenJson.token
 var urlUser = "https://api.github.com/users/"
 var urlSearch = "https://api.github.com/search/users?q="
 
