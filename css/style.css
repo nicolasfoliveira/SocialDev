@@ -161,6 +161,13 @@ header button:hover{
     position: relative;
 }
 
+.row .semresultado{
+    text-align: center;
+    margin: 60px;
+    font-family: sans-serif;
+    font-size: 20px;
+}
+
 @media screen and (max-width: 600px) {
     .row .container-card{
         display: block;
@@ -266,3 +273,24 @@ header button:hover{
 }
 
 /*############### FIM do Card de perfil do usuario ####################*/
+
+.botaoVoltaMenu{
+    text-align: center;
+}
+
+.botaoVoltaMenu button{
+    font-size: 20px;
+    padding: 5px 15px;
+    position: relative;
+    cursor: pointer;
+    border: 3px solid #b6aeff;
+    background-color: #b6aeff;
+    border-radius: 9px;
+}
+
+.botaoVoltaMenu button:hover{
+    border: 3px solid #6F4BF2;
+    background-color: #6F4BF2;
+    color: #b6aeff;
+    transition: 0.4s;
+}

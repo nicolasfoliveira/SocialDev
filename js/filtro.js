@@ -1,68 +1,69 @@
-var scriptCard = document.getElementById('script-card');
 
-dadosFiltro = (parametro) => {
-    return fetch('https://api.github.com/search/users?q='+parametro+'&per_page=100&access_token=c1de38369453883da10a42053cdba48e20fdc511').then( resposta => {
-        return resposta.json();
-    })
-    .then (json => {
-        return json;
-    }); 
-};
-
+var exibeTam = 0
+var conteudoTipo
 addFiltro = () =>{
     respostaFiltro.then(exibe=>{
         
-        if(exibe.items.length <= 19){
-            tam = exibe.items.length - 1;
+        exibeTam = exibe.length
+        if(exibe.length <= 19){
+            tam = exibe.length - 1;
         }
 
-        tamanhoDados = exibe.items.length;
-        tamanhoDadosmenos = exibe.items.length - 1;
- 
-        for(indice=cc;indice<=tam;indice++){
-     
-            buscaDados(exibe.items[indice].login).then(total=>{
-            
-                card = document.createElement('span');
-                var conteudoTipo;
-                const conteudo_html = `
-                <a href="perfil.html?User=${total.login}">
-                    <div class="container-card">
-                        <div class="card">
-                            <img src="${total.avatar_url}" alt="Foto do ${total.avatar_url}">
-                            <h3>${total.login}</h3>
-                            <p><img src="src/seguidores.png">${total.followers}
-                            <img src="src/github.png" >${total.public_repos}`
-                            if(total.type == 'User'){
-                                conteudoTipo =`<img src="src/pessoal.png" >`
-                            }else{
-                                conteudoTipo = `<img src="src/corp.png" ></p>`
-                            }`
-                        </div>
-                    </div>
-                </a>
-                `;
-           
-                card.innerHTML = conteudo_html + conteudoTipo;  
-                scriptCard.appendChild(card)
-            });
-        }
+        if(exibeTam == 0){
+            card = document.createElement('span');
+            const conteudo_html = `
+            <div class="semresultado">
+                <h2>Não existe resultado para sua busca<h2>
+            </div>`
 
-        subtracao = tamanhoDadosmenos - tam;
-        if(subtracao<20 && subtracao>0){
-            cc = tam + 1;
-            tam = subtracao + tam
+            card.innerHTML = conteudo_html;  
+            scriptCard.appendChild(card)
         }else{
-            cc = tam + 1;
-            tam = tam + 20;
+            tamanhoDados = exibe.length;
+            tamanhoDadosmenos = exibe.length - 1;
+
+            for(indice=cc;indice<=tam;indice++){
+        
+                buscaUser(exibe[indice].login).then(total=>{
+                
+                    card = document.createElement('span');
+                    const conteudo_html = `
+                    <a href="perfil.html?User=${total.login}">
+                        <div class="container-card">
+                            <div class="card">
+                                <img src="${total.avatar_url}" alt="Foto do ${total.avatar_url}">
+                                <h3>${total.login}</h3>
+                                <p><img src="src/seguidores.png">${total.followers}
+                                <img src="src/github.png" >${total.public_repos}`
+                                if(total.type == 'User'){
+                                    conteudoTipo =`<img src="src/pessoal.png" >`
+                                }else{
+                                    conteudoTipo = `<img src="src/corp.png" ></p>`
+                                }`
+                            </div>
+                        </div>
+                    </a>
+                    `;
+            
+                    card.innerHTML = conteudo_html + conteudoTipo;  
+                    scriptCard.appendChild(card)
+                });
+            }
+
+            subtracao = tamanhoDadosmenos - tam;
+            if(subtracao<20 && subtracao>0){
+                cc = tam + 1;
+                tam = subtracao + tam
+            }else{
+                cc = tam + 1;
+                tam = tam + 20;
+            }
         }
-        console.log(tamanhoDados)
-        if(tam>tamanhoDados && ccLoading==0){
+        if(tam>tamanhoDados && ccLoading==0 || exibeTam == 0){
             var selectCarregamento = document.querySelector(".carregamentoId")
             selectCarregamento.setAttribute('id', 'zero')
             ccLoading = 1;
         }
-
     });
 }
 
@@ -78,9 +79,7 @@ document.addEventListener("keydown", function(event){
 
 function filtro(info){
   
-    ccLoading = 0;
-    tam = 19;
-    cc = 0;
+    resetContadores();
 
     var selectCarregamento = document.querySelector(".carregamentoId")
     selectCarregamento.setAttribute('id', 'carregamento')
@@ -88,10 +87,8 @@ function filtro(info){
     scriptCard.innerHTML = "";
    
     if(info !== ""){
-        
         respostaFiltro = dadosFiltro(info);
         addFiltro();
-        
     }else{
         ccVazio = 0;
         cc = 0;

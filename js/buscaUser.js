@@ -1,15 +1,5 @@
-var url = window.location.search;
-var parametro = url.split("=")[1];
-
-chamaUser = () => {
-    return fetch('https://api.github.com/users/'+parametro+'?access_token=c1de38369453883da10a42053cdba48e20fdc511').then( resposta => {
-        return resposta.json();
-    })
-    .then (json => {
-        return json;
-    });
-    
-};
+url = window.location.search;
+parametro = url.split("=")[1];
 
 addUser = () => {
     lista.then(exibe=>{
@@ -61,5 +51,5 @@ addUser = () => {
     });
 }
 
-lista = chamaUser();
+lista = buscaUser(parametro);
 addUser();
