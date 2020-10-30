@@ -1,4 +1,4 @@
-var accessToken = "099eb3cb43734d8f06cb54531d4ac6c7d7a52455"
+var accessToken = "Cole o token aqui"
 var client_id = "Iv1.8df0e709fa19c3da"
 var client_secret = "38eb7d374a0afeb53113a22b5847dd03258de034"
 var urlUser = "https://api.github.com/users/"
