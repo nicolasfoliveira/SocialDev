@@ -1,4 +1,6 @@
-var accessToken = "4a5667f4789d723447b832eddf81eb0fe9cf23e1"
+var accessToken = "099eb3cb43734d8f06cb54531d4ac6c7d7a52455"
+var client_id = "Iv1.8df0e709fa19c3da"
+var client_secret = "38eb7d374a0afeb53113a22b5847dd03258de034"
 var urlUser = "https://api.github.com/users/"
 var urlSearch = "https://api.github.com/search/users?q="
 
@@ -6,7 +8,7 @@ var urlSearch = "https://api.github.com/search/users?q="
 // Faz uma busca por usuarios em geral localizados em piracicabas
 var arrayLista = [];
 chamaPiracicaba = () => {
-    return fetch(urlSearch+'location:piracicaba&per_page=100&access_token='+accessToken)    
+    return fetch(urlSearch+'location:piracicaba&per_page=100&access_token='+accessToken+'&client_id='+client_id+'&client_secret='+client_secret)    
     .then( resposta => {
         return resposta.json();
     })
