@@ -1,6 +1,6 @@
-var accessToken = "Cole o token aqui"
-var client_id = "Iv1.8df0e709fa19c3da"
-var client_secret = "38eb7d374a0afeb53113a22b5847dd03258de034"
+var config = require('./config.json');
+var accessToken = config.token;
+
 var urlUser = "https://api.github.com/users/"
 var urlSearch = "https://api.github.com/search/users?q="
 
@@ -8,7 +8,7 @@ var urlSearch = "https://api.github.com/search/users?q="
 // Faz uma busca por usuarios em geral localizados em piracicabas
 var arrayLista = [];
 chamaPiracicaba = () => {
-    return fetch(urlSearch+'location:piracicaba&per_page=100&access_token='+accessToken+'&client_id='+client_id+'&client_secret='+client_secret)    
+    return fetch(urlSearch+'location:piracicaba&per_page=100&access_token='+accessToken)    
     .then( resposta => {
         return resposta.json();
     })
