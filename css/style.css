@@ -294,3 +294,21 @@ header button:hover{
     color: #b6aeff;
     transition: 0.4s;
 }
+
+.select .btn-limpar{
+    position: relative;
+    cursor: pointer;
+    top: -2px;
+    left: 10px;
+    height: 30px;
+    border: 3px solid #666DF2;
+    background-color: #dbdbdb;
+    border-radius: 9px;
+}
+
+.select .btn-limpar:hover{
+    background-color: #000000;
+    color: #dbdbdb;
+    background-size: 50%;
+    transition: 0.4s;
+}

@@ -184,3 +184,13 @@ objetoSelect = () =>{
     }
 }
 
+//Limpar os filtros select
+function limparSelect(){
+
+    selectTipo.selectedIndex = "0"
+    selectOrdem.selectedIndex = "0"
+    
+    objetoSelect();
+    
+}
+

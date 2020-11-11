@@ -4,10 +4,9 @@ var accessToken = tokenJson.token
 var urlUser = "https://api.github.com/users/"
 var urlSearch = "https://api.github.com/search/users?q="
 
+var salvadadosUserPiracicaba = []
 //###################### main.js ###########################
 // Faz uma busca por usuarios em geral localizados em piracicabas
-var arrayLista = [];
-var salvadadosUserPiracicaba = []
 
 chamaPiracicaba = async () => {
 
@@ -24,11 +23,6 @@ chamaPiracicaba = async () => {
     }))
     return salvaArray;
 };
-/*
-buscaUser(indice.login).then(result=>{
-    salvadadosUserPiracicaba.push(result)
-    return salvadadosUserPiracicaba
-})*/
 
 //Faz uma busca por cada usuario especifico, pelo nome de login
 buscaUser = async (user) => {
