@@ -1,4 +1,4 @@
-let tokenJson = {"token":"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"}
+let tokenJson = {"token":"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"}
 var access = JSON.parse(tokenJson)
 var accessToken = access.token
 
