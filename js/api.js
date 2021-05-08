@@ -1,5 +1,6 @@
-const tokenJson = {token:"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"}
-var accessToken = tokenJson.token
+let tokenJson = {"token":"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"}
+var access = JSON.parse(tokenJson)
+var accessToken = access.token
 
 var urlUser = "https://api.github.com/users/"
 var urlSearch = "https://api.github.com/search/users?q="
