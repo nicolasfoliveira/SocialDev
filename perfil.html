@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Social Dev</title>
+
+        <link rel="stylesheet" href="css/reset.css">
+        <link rel="stylesheet" href="css/style.css">  
+        
+        <script src="js/api.js"></script>
+
+    </head> 
+    <body>
+        <header>
+            <div class="logo-cabecalho">
+                <a href="index.html"><img src="src/logo.png" alt="Logo do Social Dev">
+            </div>
+            <h2>Social Dev</h2></a>
+            <div class="btn-search">
+                <input id="filtroSearch" type="text" name="filtro" placeholder="Pesquisar...">
+                <button type="submit" onclick="redirectIndex();"><i class="fa fa-search"></i></button>
+            </div>
+        </header>
+        <div class="row" id="scriptUser"></div> 
+        <div id="loading" class="containerCarregamento">
+            <div class="carregamentoId" id="carregamento"></div>
+        </div>
+        <div class="botaoVoltaMenu">
+            <button onclick="window.location='index.html'">Menu</button>
+        </div>
+    </body>
+    <script src="js/buscaUser.js"></script>
+    <script src="js/filtro.js"></script>
+    <script src="js/start.js"></script>
+</html>

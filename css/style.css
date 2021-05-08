@@ -1,0 +1,314 @@
+/*############### header ###################*/
+body{
+    background: #666DF2;
+}
+
+header{
+    position: relative;
+    padding: 10px 20px;
+    background-color: #0D0D0D;
+    font-family: sans-serif;
+}
+
+header img {
+    position: relative;
+    width: 100%;
+}
+
+header .logo-cabecalho{
+    position: relative;
+    width: 50px;
+}
+
+header h2{
+    position: absolute;
+    top: 30px;
+    left: 90px;
+    font-size: 20px;
+    color: #8261f7;
+}
+
+.btn-search{
+    position: absolute;
+    right: 0;
+    top: 25px;
+    margin-right: 100px;
+}
+
+.btn-search:hover{
+    box-shadow: 0px 0px 15px 0px #6F4BF2;
+    transition: 0.4s;
+}
+
+header input{
+    padding-top: 8px;
+    border: 3px solid #666DF2;
+    border-radius: 9px 0px 0px 9px;
+    width: 300px;
+}
+
+@media screen and (max-width: 600px) {
+    header input{
+        padding-top: 8px;
+        border: 3px solid #666DF2;
+        border-radius: 9px 0px 0px 9px;
+        width: 100%;
+    }
+  }
+
+header button{
+    background: url("../src/lupa_pb.png") ;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 50%;
+    position: absolute;
+    cursor: pointer;
+    top: 0px;
+    height: 30px;
+    width: 32px;
+    border: 3px solid #666DF2;
+    background-color: #666DF2;
+    border-radius: 0px 9px 9px 0px;
+}
+
+header button:hover{
+    background: url("../src/lupa.png");
+    background-color: #6F4BF2;
+    background-position: center;
+    background-repeat: no-repeat;
+    border: 3px solid #6F4BF2;
+    background-size: 50%;
+    transition: 0.4s;
+}
+/*###################################### FIM hearder ##########################*/
+
+/*################################## select index #############################*/
+.select{
+    color: black;
+    font-size: 16px;
+    font-weight: bold;
+    font-family: sans-serif;
+    margin: 10px 150px;
+    text-align: right;
+}
+
+.select #selectTipo{
+    width: 120px;
+    height: 25px;
+    font-size: 16px;
+    background-color: #dbdbdb;
+}
+
+.select #selectOrdem{
+    width: 150px;
+    height: 25px;
+    font-size: 16px;
+    background-color: #dbdbdb;
+}
+/*################################## FIM select index ###########################*/
+
+/*################### CARD index.html filtro ###################*/
+
+* {
+    box-sizing: border-box;
+  }
+
+.row {
+    margin: 20px 30px;
+}
+
+.row .container-card{
+    display: inline-block;
+    width: 20%;
+    margin: 0 -1.7px;
+    padding: 0 10px;
+    vertical-align: top;
+}
+
+.row .container-card .card h3{
+    margin: 10px auto;
+}
+
+.row .container-card .card{
+    padding: 16px;
+    margin: 10px 0px;
+    text-align: center;
+    background-color: #0D0D0D;
+    color: #dbdbdb;
+    font-family: sans-serif;
+    border-radius: 25px;
+    box-shadow: 0px 0px 15px 0px #0d0d0d;
+}
+
+.row .container-card .card:hover{
+    cursor: pointer;
+    box-shadow: 0px 0px 20px 5px #0d0d0d;
+}
+
+.row .container-card .card img{
+    width: 80px;
+}
+
+.row .container-card .card:hover .avatar{
+    width: 100px;
+}
+
+.row .container-card .card p img{
+    margin-right: 7px;
+    margin-left: 5px;
+    width: 20px;
+    top: 3px;
+    position: relative;
+}
+
+.row .semresultado{
+    text-align: center;
+    margin: 60px;
+    font-family: sans-serif;
+    font-size: 20px;
+}
+
+@media screen and (max-width: 600px) {
+    .row .container-card{
+        display: block;
+        width: 100%;
+        margin-bottom: 20px;
+    }
+  }
+/*###################### FIM CARD index.html ##################### */
+
+/* ############## animação carregamento ####################*/
+.containerCarregamento{
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+
+.containerCarregamento #carregamento{
+    width: 30px;
+    height: 30px;
+    border: 5px solid #b6aeff;
+    border-top-color: #6a12a5;
+    border-radius: 50%;
+    animation: rotacao 1s infinite;
+    margin-bottom: 50px;
+}
+
+@keyframes rotacao{
+    to{
+        transform: rotate(1turn);
+    }
+}
+/*############# FIM animação carregamento ####################*/
+
+/*############### Card do perfil de usuario ####################*/
+
+.row .containerUser{
+    width: 80%;
+    background-color: #0D0D0D;
+    border-radius: 25px;
+    box-shadow: 0px 0px 15px 0px #0d0d0d;
+    color: white;
+    font-family: sans-serif;
+    padding: 16px;
+    text-align: center;
+    margin: 50px auto;
+}
+
+.row .containerUser .cardUser{
+    display: flex;
+    font-family: sans-serif;
+}
+
+.row .containerUser .cardUser .UserAvatar{
+    width: 30%;
+    text-align: center;
+}
+
+.row .containerUser .cardUser .UserAvatar img{
+    width: 100%;
+    border-radius: 15%;
+    padding:30px
+}
+
+.row .containerUser .cardUser .UserDados{
+    width: 70%;
+    margin: auto 5px;
+}
+
+.row .containerUser .cardUser .UserDados p{
+    padding: 8px;
+    text-align: left;
+    color: #dbdbdb;
+}
+
+.row .containerUser .cardUser .UserDados .UserName{
+    font-size: 28px;
+    color: #6F4BF2;
+    font-weight: bold;
+}
+
+.row .containerUser .cardUser .UserDados .UserCompany{
+    font-weight: bold;
+    color: white;
+}
+
+.row .containerUser .cardUser .UserDados img{
+    margin-right: 7px;
+    margin-left: 7px;
+    width: 20px;
+    top: 3px;
+    position: relative;
+}
+
+@media screen and (max-width: 600px) {
+    .row .containerUser{
+        display: block;
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    .row .containerUser .cardUser{
+        display: block;
+    }
+}
+
+/*############### FIM do Card de perfil do usuario ####################*/
+
+.botaoVoltaMenu{
+    text-align: center;
+}
+
+.botaoVoltaMenu button{
+    font-size: 20px;
+    padding: 5px 15px;
+    position: relative;
+    cursor: pointer;
+    border: 3px solid #b6aeff;
+    background-color: #b6aeff;
+    border-radius: 9px;
+}
+
+.botaoVoltaMenu button:hover{
+    border: 3px solid #6F4BF2;
+    background-color: #6F4BF2;
+    color: #b6aeff;
+    transition: 0.4s;
+}
+
+.select .btn-limpar{
+    position: relative;
+    cursor: pointer;
+    top: -2px;
+    left: 10px;
+    height: 30px;
+    border: 3px solid #666DF2;
+    background-color: #dbdbdb;
+    border-radius: 9px;
+}
+
+.select .btn-limpar:hover{
+    background-color: #000000;
+    color: #dbdbdb;
+    background-size: 50%;
+    transition: 0.4s;
+}

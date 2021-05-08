@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Social Dev</title>
+
+        <link rel="stylesheet" href="css/reset.css">
+        <link rel="stylesheet" href="css/style.css">
+
+        <script src="js/api.js"></script>
+        
+    </head> 
+    <body>
+        <header>
+            <div class="logo-cabecalho">
+                <a href="index.html"><img src="src/logo.png" alt="Logo do Social Dev">
+            </div>
+            <h2>Social Dev</h2></a>
+            <div class="btn-search">
+                <input id="filtroSearch" type="text" name="filtro" placeholder="Pesquisar...">
+                <button type="submit" onclick="redirectIndex();"><i class="fa fa-search"></i></button>
+            </div>
+        </header>
+        <div class="select">
+            Filtrar
+            <select name="tipo" id="selectTipo" onchange="objetoSelect()">
+                <option value="vazio"></option>
+                <option value="user">Usuário</option>
+                <option value="org">Organização</option>
+            </select>
+            Ordenar
+            <select name="ordem" id="selectOrdem" onchange="objetoSelect()">
+                <option value="vazio"></option>
+                <option value="data">Data de cadastro</option>
+                <option value="seguidores">Seguidores</option>
+                <option value="repos">Repositório</option>
+            </select>
+            <button type="submit" onclick="limparSelect()" class="btn-limpar">Limpar</button>
+        </div>
+        <div class="row" id="script-card"></div><br>
+        <div id="loading" class="containerCarregamento">
+            <div class="carregamentoId" id="carregamento"></div>
+        </div>
+    </body>
+    <script src="js/main.js"></script>
+    <script src="js/filtro.js"></script>
+    <script src="js/start.js"></script>
+</html>
